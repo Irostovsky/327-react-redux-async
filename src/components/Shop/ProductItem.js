@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 import { cartItemsActions } from "../../store/cart_items";
 
 const ProductItem = (props) => {
-  const { title, price, description } = props;
+  const { id, title, price, description } = props;
   const dispatch = useDispatch();
   const addToCartHandler = () => {
-    dispatch(cartItemsActions.add({ key: props.id, title, price }));
+    dispatch(cartItemsActions.add({ id, title, price }));
   };
   return (
     <li className={classes.item}>
