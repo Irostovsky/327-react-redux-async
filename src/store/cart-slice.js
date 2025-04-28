@@ -20,13 +20,7 @@ const cartSlice = createSlice({
         });
       }
     },
-    increase(state, action) {
-      const existingItem = state.items.find((item) => item.id === action.payload.id);
-      if (existingItem) {
-        existingItem.quantity += 1;
-      }
-    },
-    decrease(state, action) {
+    remove(state, action) {
       const existingItem = state.items.find((item) => item.id === action.payload.id);
       if (existingItem) {
         if (existingItem.quantity > 1) {
