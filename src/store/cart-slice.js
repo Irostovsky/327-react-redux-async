@@ -9,7 +9,7 @@ const cartSlice = createSlice({
 
       if (existingItem) {
         // Update the existing item
-        existingItem.quantity += 1;
+        existingItem.quantity++;
       } else {
         // Add a new item
         state.items.push({
@@ -30,7 +30,7 @@ const cartSlice = createSlice({
       const existingItem = state.items.find((item) => item.id === action.payload.id);
       if (existingItem) {
         if (existingItem.quantity > 1) {
-          existingItem.quantity -= 1;
+          existingItem.quantity--;
         } else {
           state.items = state.items.filter((item) => item.id !== action.payload.id);
         }
