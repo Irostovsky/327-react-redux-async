@@ -4,11 +4,11 @@ import Products from "./components/Shop/Products";
 import { useSelector } from "react-redux";
 
 function App() {
-  const cartShown = useSelector((state) => state.cart.isShown);
+  const isCartVisible = useSelector((state) => state.ui.cardIsVisible);
 
   return (
     <Layout>
-      {cartShown && <Cart />}
+      {isCartVisible && <Cart />}
       <Products />
     </Layout>
   );

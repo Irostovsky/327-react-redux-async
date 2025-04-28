@@ -1,16 +1,16 @@
 import classes from "./CartItem.module.css";
 import { useDispatch } from "react-redux";
-import { cartItemsActions } from "../../store/cart_items";
+import { cartActions } from "../../store/cart-slice";
 
 const CartItem = (props) => {
   const { id, title, quantity, total, price } = props.item;
 
   const dispatch = useDispatch();
   const addToCardHandler = () => {
-    dispatch(cartItemsActions.increase({ id }));
+    dispatch(cartActions.increase({ id }));
   };
   const removeFromCardHandler = () => {
-    dispatch(cartItemsActions.decrease({ id }));
+    dispatch(cartActions.decrease({ id }));
   };
 
   return (

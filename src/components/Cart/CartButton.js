@@ -2,7 +2,7 @@ import classes from "./CartButton.module.css";
 import { useSelector } from "react-redux";
 
 const CartButton = (props) => {
-  const cartItems = useSelector((state) => state.cartItems.items);
+  const cartItems = useSelector((state) => state.cart.items);
   const totalQuantity = cartItems.reduce((curNumber, item) => {
     return curNumber + item.quantity;
   }, 0);
